@@ -1,43 +1,34 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import Container from "../components/container";
+import MoreRecipes from "../components/more-recipes";
+import HeroPost from "../components/hero-post";
+import Layout from "../components/layout";
+import { getAllRecipes } from "../lib/api";
+import Head from "next/head";
+import Header from "../components/header";
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({ allRecipes }) {
+  const heroPost = allRecipes[0];
+  const morePosts = allRecipes.slice(1);
   return (
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Robin's recipes</title>
+          <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
         </Head>
         <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Header />
+          {heroPost && <HeroPost recipe={heroPost} />}
+          {morePosts.length > 0 && <MoreRecipes posts={morePosts} />}
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps({ preview }) {
-  const allPosts = await getAllPostsForHome(preview)
+  const allRecipes = await getAllRecipes(preview);
   return {
-    props: { allPosts },
-  }
+    props: { allRecipes },
+  };
 }

@@ -1,41 +1,36 @@
-import Avatar from '../components/avatar'
-import Date from '../components/date'
-import CoverImage from '../components/cover-image'
-import Link from 'next/link'
+import Avatar from "../components/avatar";
+import Date from "../components/date";
+import CoverImage from "../components/cover-image";
+import Link from "next/link";
 
-export default function HeroPost({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}) {
+export default function HeroPost({ recipe }) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
-        <CoverImage
-          title={title}
-          responsiveImage={coverImage.responsiveImage}
-          slug={slug}
-        />
-      </div>
-      <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 mb-20 md:mb-28">
-        <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link as={`/posts/${slug}`} href="/posts/[slug]">
-              <a className="hover:underline">{title}</a>
-            </Link>
-          </h3>
-          <div className="mb-4 md:mb-0 text-lg">
-            <Date dateString={date} />
+      <div className="heroRecipe">
+        {recipe.recommended ? (
+          <div className="recommendedLabel">
+            <span>Recommended</span>
           </div>
-        </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+        ) : (
+          ``
+        )}
+        <CoverImage
+          title={recipe.title}
+          responsiveImage={recipe.cover.responsiveImage}
+          slug={recipe.slug}
+        />
+        <div className="recipeInfo">
+          <h3>{recipe.title}</h3>
+          <span>
+            <img src="images/clock.svg" alt="clock icon" />
+            {` ${recipe.cookingtime}`}
+          </span>
+          <p>{recipe.intro}</p>
+          <Link href={`/recipes/${recipe.slug}`} className="discoverButton">
+            {`discover >`}
+          </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }
