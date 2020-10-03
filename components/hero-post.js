@@ -9,7 +9,7 @@ export default function HeroPost({ recipe }) {
       <div className="heroRecipe">
         {recipe.recommended ? (
           <div className="recommendedLabel">
-            <span>Recommended</span>
+            <span className="recommendedText">Recommended</span>
           </div>
         ) : (
           ``
@@ -21,13 +21,15 @@ export default function HeroPost({ recipe }) {
         />
         <div className="recipeInfo">
           <h3>{recipe.title}</h3>
-          <span>
+          <span className="timeLabel">
             <img src="images/clock.svg" alt="clock icon" />
             {` ${recipe.cookingtime}`}
           </span>
           <p>{recipe.intro}</p>
-          <Link href={`/recipes/${recipe.slug}`} className="discoverButton">
-            {`discover >`}
+          <Link href={`/recipes/${recipe.slug}`}>
+            <a href={`/recipes/${recipe.slug}`} className="discoverButton">
+              {`discover >`}
+            </a>
           </Link>
         </div>
       </div>

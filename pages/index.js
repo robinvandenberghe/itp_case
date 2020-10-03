@@ -19,7 +19,7 @@ export default function Index({ allRecipes }) {
         <Container>
           <Header />
           {heroPost && <HeroPost recipe={heroPost} />}
-          {morePosts.length > 0 && <MoreRecipes posts={morePosts} />}
+          {morePosts.length > 0 && <MoreRecipes recipes={morePosts} />}
         </Container>
       </Layout>
     </>

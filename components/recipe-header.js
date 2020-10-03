@@ -10,9 +10,13 @@ export default function RecipeHeader({ title, coverImage, time, ingredients }) {
       <div className="mb-8 md:mb-16 -mx-5 sm:mx-0">
         <CoverImage title={title} responsiveImage={coverImage} />
       </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="mb-6 text-lg">{time}</div>
+      <div className="recipeDetail">
+        <span className="timeLabel">
+          <img src="/images/clock.svg" alt="clock icon" />
+          {` ${time}`}
+        </span>
       </div>
+
       {/* <div>{ingr}</div> */}
     </>
   );

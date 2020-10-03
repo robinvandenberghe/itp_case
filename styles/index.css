@@ -7,6 +7,7 @@
 
 html {
   font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 96.5%;
 }
 /* Header */
 .pageHeader {
@@ -28,6 +29,7 @@ html {
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25);
   border-radius: 1.6rem;
   position: relative;
+  overflow: hidden;
 }
 
 .recommendedLabel {
@@ -37,8 +39,66 @@ html {
   background-color: #f2812e;
   position: absolute;
   top: 1rem;
-  left: 0;
+  left: -1rem;
+  z-index: 1;
+  padding: 0.2rem 1rem 0.2rem 4rem;
+  border-radius: 0.6rem;
 }
-.recommendedLabel span {
-  transform: translateY(0.5rem);
+.recommendedText {
+  transform: translateY(-1rem);
+}
+
+.coverImage {
+  max-height: 16rem;
+  overflow: hidden;
+}
+
+.coverImage img {
+  object-position: center;
+  object-fit: fill;
+}
+
+.recipeInfo {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.recipeInfo h3 {
+  font-size: 2.4rem;
+  color: #535353;
+  font-weight: 700;
+}
+
+.discoverButton {
+  color: white;
+  background-color: #2e8787;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  width: max-content;
+  justify-self: right;
+}
+
+.timeLabel {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  gap: 0.5rem;
+  color: #a9a9a9;
+}
+
+.allTitle {
+  font-size: 2rem;
+  color: #535353;
+  font-weight: 700;
+}
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 32rem));
+  grid-auto-rows: max-content;
+}
+
+/* Recipe detail */
+.recipeDetail {
 }
