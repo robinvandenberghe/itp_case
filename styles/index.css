@@ -18,6 +18,7 @@ html {
   font-size: 3.2rem;
   color: #2e8787;
   font-weight: 600;
+  margin-top: 1rem;
 }
 .pageHeaderGrid {
   display: grid;
@@ -36,6 +37,7 @@ html {
   position: relative;
   overflow: hidden;
   color: #535353;
+  height: max-content;
 }
 
 .recommendedLabel {
@@ -48,10 +50,13 @@ html {
   left: -1rem;
   z-index: 1;
   padding: 0.2rem 1rem 0.2rem 4rem;
-  border-radius: 0.6rem;
+  border-radius: 0.4rem;
+  height: 1.6rem;
+  width: 17rem;
 }
 .recommendedText {
-  transform: translateY(-1rem);
+  position: absolute;
+  top: -0.8rem;
 }
 
 .coverImage {
@@ -85,6 +90,7 @@ html {
   border-radius: 1rem;
   width: max-content;
   justify-self: right;
+  align-self: flex-end;
 }
 
 .timeLabel {
@@ -102,7 +108,8 @@ html {
 }
 .previewGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 32rem));
+  grid-template-columns: repeat(auto-fill, minmax(24rem, max-content));
+  gap: 2rem;
   grid-auto-rows: max-content;
 }
 
@@ -120,6 +127,12 @@ html {
   max-width: 64rem;
   margin: 0 auto;
   color: #535353;
+}
+.backLink {
+  font-size: 1.2rem;
+}
+.backLink:hover {
+  text-decoration: underline;
 }
 .recipeCover {
   margin: 2rem auto;
@@ -170,20 +183,25 @@ html {
 
 /* Footer */
 
+footer {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
 .robinFooter {
+  margin: 1rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, max-content));
   gap: 2rem;
   font-size: 1rem;
+  justify-content: center;
 }
 .robinFooter div {
   display: grid;
   grid-template-columns: max-content auto;
   align-items: center;
   gap: 1rem;
-  & img {
-    max-height: 4rem;
-  }
 }
 .itp {
   color: #009;

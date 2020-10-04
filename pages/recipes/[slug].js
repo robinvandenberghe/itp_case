@@ -4,7 +4,6 @@ import Container from "../../components/container";
 import RecipeBody from "../../components/recipe-body";
 import Header from "../../components/header";
 import RecipeHeader from "../../components/recipe-header";
-import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
 import { getAllRecipesWithSlug, getRecipe } from "../../lib/api";
 import RecipeTitle from "../../components/recipe-title";
