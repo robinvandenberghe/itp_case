@@ -6,7 +6,10 @@ export default function RecipeHeader({ title, coverImage, time, ingredients }) {
   return (
     <>
       <RecipeTitle>{title}</RecipeTitle>
+      <div className="recipeCover">
       <CoverImage title={title} responsiveImage={coverImage} />
+
+      </div>
       <div className="recipeDetail">
         <span className="timeLabel">
           <img src="/images/clock.svg" alt="clock icon" />

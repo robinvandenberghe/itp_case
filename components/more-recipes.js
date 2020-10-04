@@ -5,8 +5,8 @@ export default function MoreRecipes({ recipes }) {
     <section>
       <h2 className="allTitle">All recipes</h2>
       <div className="previewGrid">
-        {recipes.map((recipe) => (
-          <RecipePreview recipe={recipe} />
+        {recipes.map((recipe, index) => (
+          <RecipePreview key={index} recipe={recipe} />
         ))}
       </div>
     </section>

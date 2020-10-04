@@ -40,7 +40,6 @@ export default function Recipe({ recipe, preview }) {
               />
               <RecipeBody content={recipe.steps} />
             </article>
-            <SectionSeparator />
           </>
         )}
       </Container>

@@ -11,6 +11,7 @@ html {
   font-size: 96.5%;
   font-variant-numeric: lining-nums;
   font-feature-settings: "lnum";
+  line-height: 1.2;
 }
 /* Header */
 .pageHeader {
@@ -25,7 +26,7 @@ html {
   align-items: center;
   gap: 1rem;
 }
-/* Hero post */
+/* Recipe preview */
 .recipePreview {
   width: 100%;
   max-width: 56rem;
@@ -120,6 +121,22 @@ html {
   margin: 0 auto;
   color: #535353;
 }
+.recipeCover {
+  margin: 2rem auto;
+}
+.recipeIngredients {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.recipeIngredients h4 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.recipeIngredients ul {
+  list-style-type: disc;
+  font-size: 1.2rem;
+}
 .recipeSteps {
   display: grid;
   gap: 1rem;
@@ -131,15 +148,46 @@ html {
 }
 .stepNumber {
   position: absolute;
-  left: -2rem;
+  left: -2.4rem;
   top: 0;
-  font-size: 4rem;
+  font-size: 3rem;
   opacity: 0.15;
   font-weight: 700;
   left: -1rem;
   line-height: 0.8;
+  color: #2e8787;
 }
 .recipeSubtitle {
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .recipeDetail {
+    padding: inherit 1rem;
+  }
+}
+
+/* Footer */
+
+.robinFooter {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, max-content));
+  gap: 2rem;
+  font-size: 1rem;
+}
+.robinFooter div {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  gap: 1rem;
+  & img {
+    max-height: 4rem;
+  }
+}
+.itp {
+  color: #009;
+}
+.rvdb {
+  color: #2e8787;
 }

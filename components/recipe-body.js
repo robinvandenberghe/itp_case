@@ -14,9 +14,12 @@ export default function RecipeBody({ content }) {
 
           case false:
             return (
-              <div id={index} className="recipeStep">
+              <div key={index} className="recipeStep">
                 <span className="stepNumber">{item.stepnumber}</span>
-                <span className="stepContent" dangerouslySetInnerHTML={{ __html: item.step }}></span>
+                <span
+                  className="stepContent"
+                  dangerouslySetInnerHTML={{ __html: item.step }}
+                ></span>
               </div>
             );
         }
