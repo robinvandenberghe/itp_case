@@ -2,11 +2,25 @@ import markdownStyles from "./markdown-styles.module.css";
 
 export default function RecipeBody({ content }) {
   return (
-    <div className="max-w-2xl mx-auto">
-      <div
-        className={markdownStyles["markdown"]}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+    <div className="recipeDetail recipeSteps">
+      {content.map((item, index) => {
+        switch (item.subtitle !== undefined) {
+          case true:
+            return (
+              <h4 id={index} className="recipeSubtitle">
+                {item.subtitle}
+              </h4>
+            );
+
+          case false:
+            return (
+              <div id={index} className="recipeStep">
+                <span className="stepNumber">{item.stepnumber}</span>
+                <span className="stepContent" dangerouslySetInnerHTML={{ __html: item.step }}></span>
+              </div>
+            );
+        }
+      })}
     </div>
   );
 }

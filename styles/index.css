@@ -7,7 +7,10 @@
 
 html {
   font-family: "Raleway", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
   font-size: 96.5%;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
 }
 /* Header */
 .pageHeader {
@@ -23,13 +26,15 @@ html {
   gap: 1rem;
 }
 /* Hero post */
-.heroRecipe {
+.recipePreview {
+  width: 100%;
   max-width: 56rem;
   margin: 2rem auto;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25);
   border-radius: 1.6rem;
   position: relative;
   overflow: hidden;
+  color: #535353;
 }
 
 .recommendedLabel {
@@ -53,6 +58,7 @@ html {
   overflow: hidden;
 }
 
+.coverImage picture,
 .coverImage img {
   object-position: center;
   object-fit: fill;
@@ -74,7 +80,7 @@ html {
   color: white;
   background-color: #2e8787;
   padding: 0.5rem 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   border-radius: 1rem;
   width: max-content;
   justify-self: right;
@@ -100,5 +106,40 @@ html {
 }
 
 /* Recipe detail */
+
+.recipeTitle {
+  color: #535353;
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 2rem auto 0;
+  max-width: 64rem;
+}
 .recipeDetail {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  color: #535353;
+}
+.recipeSteps {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.recipeStep {
+  position: relative;
+  font-size: 1.4rem;
+}
+.stepNumber {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  font-size: 4rem;
+  opacity: 0.15;
+  font-weight: 700;
+  left: -1rem;
+  line-height: 0.8;
+}
+.recipeSubtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
 }

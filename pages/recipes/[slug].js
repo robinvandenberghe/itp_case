@@ -36,7 +36,7 @@ export default function Recipe({ recipe, preview }) {
                 title={recipe.title}
                 coverImage={recipe.cover.responsiveImage}
                 time={recipe.cookingtime}
-                ingredients={recipe.ingredients}
+                ingredients={recipe.ingr}
               />
               <RecipeBody content={recipe.steps} />
             </article>
@@ -50,12 +50,13 @@ export default function Recipe({ recipe, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getRecipe(params.slug, preview);
-
+  const ingr = await markdownToHtml(data?.recipe.ingredients);
   return {
     props: {
       preview,
       recipe: {
         ...data?.recipe,
+        ingr: ingr,
       },
     },
   };

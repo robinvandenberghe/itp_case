@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function PostPreview({ recipe }) {
   return (
-    <div className="heroRecipe">
+    <div className="recipePreview">
       {recipe.recommended ? (
         <div className="recommendedLabel">
           <span className="recommendedText">Recommended</span>

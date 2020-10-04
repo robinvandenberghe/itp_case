@@ -1,12 +1,10 @@
-import Avatar from "../components/avatar";
-import Date from "../components/date";
-import CoverImage from "../components/cover-image";
+import CoverImage from "./cover-image";
 import Link from "next/link";
 
-export default function HeroPost({ recipe }) {
+export default function HeroRecipe({ recipe }) {
   return (
     <section>
-      <div className="heroRecipe">
+      <div className="recipePreview">
         {recipe.recommended ? (
           <div className="recommendedLabel">
             <span className="recommendedText">Recommended</span>

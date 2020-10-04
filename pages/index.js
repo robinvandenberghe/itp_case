@@ -1,10 +1,10 @@
 import Container from "../components/container";
 import MoreRecipes from "../components/more-recipes";
-import HeroPost from "../components/hero-post";
 import Layout from "../components/layout";
 import { getAllRecipes } from "../lib/api";
 import Head from "next/head";
 import Header from "../components/header";
+import HeroRecipe from "../components/hero-recipe";
 
 export default function Index({ allRecipes }) {
   const heroPost = allRecipes[0];
@@ -18,7 +18,7 @@ export default function Index({ allRecipes }) {
         </Head>
         <Container>
           <Header />
-          {heroPost && <HeroPost recipe={heroPost} />}
+          {heroPost && <HeroRecipe recipe={heroPost} />}
           {morePosts.length > 0 && <MoreRecipes recipes={morePosts} />}
         </Container>
       </Layout>
